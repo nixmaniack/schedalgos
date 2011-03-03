@@ -96,7 +96,7 @@ int main(void) {
 /*********************** Function Definitions **********************************/
 
 /**
- * Function Name: 	psort()
+ * Function Name: 	psort
  * Function:		Sorts Process Array according arrivalTime in ascending order
  * Input:			Process Array, Total number of process
  * Output:			Sorted process array
