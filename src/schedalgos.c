@@ -18,7 +18,7 @@
 
 /**************Global Variable Declarations **********************************/
 
-static int currentTime=0;		/*This vaiable is holds current time and increases as process get executed*/
+static int currentTime=0;		/*This variable holds current time and increases as processes get executed*/
 int numOfProcesses;				/*variable to hold number of processes*/
 int currentRunningProcess;		/*Keeps track of current running process*/
 
@@ -39,14 +39,14 @@ typedef struct {
 /**************Function Declarations **********************************/
 
 void psort(proc *, int);			/* Sorts Processes according to Burst Time */
-int selectProcess(proc *);			/* Selects process having shortest burst time */
-void execProcess(proc *, int, names *);		/* Executes process got from selectProcess */
-int getTotalBurstTime(proc *, int); /* Calculates total burst Time */
+int selectProcess(proc *);			/* Selects the process having shortest burst time */
+void execProcess(proc *, int, names *);		/* Executes process got from selectProcess() */
+int getTotalBurstTime(proc *, int);        /* Calculates total burst Time */
 void fcfs(proc *, names *);			/*Declaration for FCFS function*/
 void sjfp(proc *, names *);			/*Declaration for SJFP function*/
 void priority(proc *, names *);		/*Declaration for Priority Based function*/
 void prioSort(proc *, int);			/*Declaration for sorting according to highest priority function*/
-void roundrobin(proc *, names *);	/*Declaration for Round Robin function*/
+void roundrobin(proc *, names *);  	/*Declaration for Round Robin function*/
 
 /**************Main starts here **********************************/
 
@@ -96,7 +96,7 @@ int main(void) {
 /*********************** Function Definitions **********************************/
 
 /**
- * Function Name: 	psort
+ * Function Name: 	psort()
  * Function:		Sorts Process Array according arrivalTime in ascending order
  * Input:			Process Array, Total number of process
  * Output:			Sorted process array
