@@ -1,8 +1,8 @@
 /*
  ============================================================================
- Name        : schedalgo.c
+ Name        : schedalgos.c
  Author      : Muneeb Shaikh
- Version     : 0.2.7
+ Version     : 0.2.8
  Copyright   : GPLv3
  Description : Process Scheduling Algorithms.
  	 	 	 	 1.	First Come First Serve
@@ -61,7 +61,7 @@ int main(void) {
 	                1. First Come First Serve \n \
 	                2. Shortest Job First (Preemptive)\n \
 	                3. Priority Based (Non-Preemptive)\n \
-	                4. Round Robin (Non-Preemptive)\n \
+	                4. Round Robin \n \
 	                5. EXIT \n \
 	                ");
 	        printf("Enter your choice: ");
@@ -291,7 +291,7 @@ void sjfp(proc process[], names pnames[]) {
 	     * Displaying time axis
 	     * NOTE: This is not generic for loop. YOU HAVE TO ADJUST value of i, and font size of terminal accordingly to get proper view in line
 	     */
-	    for(i=0; i<=20; i++) {
+	    for(i=0; i<=currentTime; i++) {
 	        printf("|%2d ",i);
 	    }
 	    printf("\n");
@@ -380,7 +380,7 @@ void fcfs(proc process[], names pnames[]) {
      * Displaying time axis
      * NOTE: This is not generic for loop. YOU HAVE TO ADJUST value of i, and font size of terminal accordingly to get proper view in line
      */
-    for(i=0; i<=20; i++) {
+    for(i=0; i<=currentTime; i++) {
         printf("|%2d ",i);
     }
     printf("\n");
@@ -477,7 +477,7 @@ void priority(proc process[], names pnames[]) {
 	 * Displaying time axis
 	 * NOTE: This is not generic for loop. YOU HAVE TO ADJUST value of i, and font size of terminal accordingly to get proper view in line
 	 */
-	for(i=0; i<=20; i++) {
+	for(i=0; i<=currentTime; i++) {
 		printf("|%2d ",i);
 	}
 	printf("\n");
@@ -530,8 +530,9 @@ void prioSort(proc pproc[], int numOfProcesses) {
 
 void roundrobin(proc process[], names pnames[]) {
 	int i, j, totalServiceTime, timeQuanta;
+
 	currentTime = 0;
-	puts("Round Robin (Non-Preemptive) Algorithm\n");
+	puts("Round Robin Algorithm\n");
 	puts("Enter Number of Processes: ");
 	scanf("%d", &numOfProcesses);
 
@@ -601,6 +602,11 @@ void roundrobin(proc process[], names pnames[]) {
 			} else {
 				currentTime +=1;										/*This part is not tested but only primary implementation is done for process those are not yet arrived and there's no process to be executed. Filling the IDLE TIME GAP*/
 				printf("\nNo Process is being executed..\n");
+				/*
+				 * TODO:
+				 * Code for copying a space should come here.
+				 */
+
 			}
 		}
 
@@ -628,7 +634,7 @@ void roundrobin(proc process[], names pnames[]) {
 	 * Displaying time axis
 	 * NOTE: This is not generic for loop. YOU HAVE TO ADJUST value of i, and font size of terminal accordingly to get proper view in line
 	 */
-	for(i=0; i<=20; i++) {
+	for(i=0; i<=currentTime; i++) {
 		printf("|%2d ",i);
 	}
 	printf("\n");
